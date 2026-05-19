@@ -73,6 +73,3 @@ Proje ortam değişkenlerinde (Colab Secrets) aşağıdaki anahtarların tanıml
 
 with open("README.md", "w", encoding="utf-8") as f:
     f.write(readme_content)
-
-print("✅ README.md dosyası (ngrok gereksinimi kaldırılarak) başarıyla güncellendi!")
-print("Sol taraftaki 'Dosyalar' menüsünden README.md dosyasını indirebilirsiniz.")
