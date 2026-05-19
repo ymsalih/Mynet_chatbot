@@ -37,7 +37,7 @@ Proje, iş mantığını birbirinden bağımsız ancak tam entegre modüllere ay
 * Yanıtlar markdown formatında, kaynak linkleriyle birlikte profesyonel bir şekilde oluşturulur.
 
 ### 4. Kullanıcı Arayüzü (Gradio)
-* Kullanıcının sistemle etkileşime girmesi için estetik, akıcı ve API'ye HTTP istekleri atan bir sohbet arayüzü sunar.
+* Kullanıcının sistemle etkileşime girmesi için estetik, akıcı ve API'ye HTTP istekleri atan bir sohbet arayüzü sunar. Herhangi bir tünelleme yazılımına gerek kalmadan Gradio'nun kendi altyapısı ile dışa açılır.
 
 ---
 
@@ -48,8 +48,9 @@ Bu proje Google Colab ortamı için optimize edilmiştir. Kendi ortamınızda ç
 ### Gereksinimler
 Proje ortam değişkenlerinde (Colab Secrets) aşağıdaki anahtarların tanımlı olması gerekmektedir:
 - `GOOGLE_API_KEY`: Gemini API kullanımı için.
-- `NGROK_TOKEN`: FastAPI sunucusunu dışarıya açmak (tünellemek) için.
 - *(Opsiyonel)* `HF_TOKEN`: HuggingFace modellerine erişim kotalarına takılmamak için.
+
+*(Not: Sistem sadece Gradio üzerinden çalıştığı için ngrok veya benzeri bir tünelleme servisine ihtiyaç duyulmamaktadır.)*
 
 ### Adımlar
 1. Depoyu klonlayın veya `.ipynb` dosyasını Google Colab'e yükleyin.
@@ -68,11 +69,10 @@ Proje ortam değişkenlerinde (Colab Secrets) aşağıdaki anahtarların tanıml
 - **Web Kazıma:** BeautifulSoup4, Feedparser, Requests
 - **Backend:** FastAPI, Uvicorn
 - **Arayüz:** Gradio
-- **Tünelleme:** Pyngrok
 """
 
 with open("README.md", "w", encoding="utf-8") as f:
     f.write(readme_content)
 
-print("✅ README.md dosyası başarıyla oluşturuldu!")
-print("Sol taraftaki 'Dosyalar' (Klasör ikonu) menüsünü yenileyerek README.md dosyasını bilgisayarınıza indirebilir ve GitHub deponuza yükleyebilirsiniz.")
+print("✅ README.md dosyası (ngrok gereksinimi kaldırılarak) başarıyla güncellendi!")
+print("Sol taraftaki 'Dosyalar' menüsünden README.md dosyasını indirebilirsiniz.")
